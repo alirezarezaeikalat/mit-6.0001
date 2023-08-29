@@ -12,13 +12,13 @@
       
       ALU(do primitive operations like addition, subtraction, ... it might get data from memory or store data in memory)
         ALU can do set of --primitives--
-          a. arthmetic and logic
+          a. arithmetic and logic
           b. simple tests
           c. moving data
           
       Input         Output
 
-3. Alan Turnin showed that you can compute anything with 6 --primitives-- and piece of tape: 
+3. Alan Turning showed that you can compute anything with 6 --primitives-- and piece of tape: 
 
         a. move left
         b. move right
@@ -38,7 +38,7 @@
 
           int, float, bool, NoneType (special and has one value None),
 
-          you can use type conversion in pythone:
+          you can use type conversion in python:
             float(3) convert int 3 to 3.0
             int(3.9) convert float 3.9 to integer 3 
 
@@ -196,7 +196,7 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
 [VERY IMPORTANT]
 19. In python you can access global variables in functions, but you can't modify global variables inside functions.
 
-20. In python every function has a seperate scope, and when you pass a argument to a function, the function makes new variable 
+20. In python every function has a separate scope, and when you pass a argument to a function, the function makes new variable 
       in the function scope (call by value)
 
 [ATTENTION]
@@ -213,7 +213,7 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
 
             t[0]   will gets 2
             (2, "mit", 3) + (5, 6)   -> (2, "mit", 3, 5, 6)
-            t[1:2]  gives ("mit",)  the last comma is neccessary, because without comma it is just a string not tuple
+            t[1:2]  gives ("mit",)  the last comma is necessary, because without comma it is just a string not tuple
             t[1:3]  gives ("mit", 3)
             len(t)      gives 3
             t[0] = 4          will gives an error because tuples are --immutable--
@@ -301,7 +301,7 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
 
 23. recursion is taking a problem and reducing it to a smaller version of the same problem
 
-      Algorithmcally: a way to design a solution to a problems by divide and conquer
+      Algorithmically: a way to design a solution to a problems by divide and conquer
                         reduce a problem to a simpler versions of the same problem.
       
       semantically: a programming technique where a function calls itself
@@ -361,14 +361,14 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
                         towers(n-1, spare, to, from)
       
       example 4: 
-      at first there are two rabits, the female, and the male, and after a month the rabits will gets mature, and the female rabit will
-      be pregnant, after the second month the female rabit, produces the pair, what is the count of female rabits after n month?
+      at first there are two rabbits, the female, and the male, and after a month the rabbits will gets mature, and the female rabbit will
+      be pregnant, after the second month the female rabbit, produces the pair, what is the count of female rabbits after n month?
 
       fib(n) = fib(n-1) + fib(n-2)  
 
       def fib(n):
       """ assume n int >= 0
-      returb fib of n"""
+      return fib of n"""
             if n == 1 or n == 2:
                   return 1
             else:
@@ -408,9 +408,9 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
 
       del(grades['Ana'])      will delete Ana
 
-      grades.keys()           will return an --iterable-- something like tuples, but order is not gauranteed
+      grades.keys()           will return an --iterable-- something like tuples, but order is not guaranteed
 
-      grades.values()         will return an --iterable-- but order is not gauranteed
+      grades.values()         will return an --iterable-- but order is not guaranteed
 
       [ATTENTION]
       dictionary itself is mutable
@@ -454,11 +454,11 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
 
 26. There multiple approaches to testing:  
 
-      a. --intuition-- about natural boundries to the problem
+      a. --intuition-- about natural boundaries to the problem
 
-      b. if the problem has no natural boundries, you can do --random testing--
+      b. if the problem has no natural boundaries, you can do --random testing--
 
-      c. --black box tesing-- : explore paths through specification (doc string), you don't have to code
+      c. --black box testing-- : explore paths through specification (doc string), you don't have to code
 
       d. --glass box testing--: explore paths through the code
 
@@ -470,7 +470,7 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
             
             case                    x                       eps
 
-            boundry                 0                       0.0001
+            boundary                 0                       0.0001
             perfect square          25                      0.0001
             less than 1             0.05                    0.0001
             irrational square root  2                       0.0001
@@ -490,7 +490,7 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
 
             there are some --guidelines-- for glass box testing:
 
-                  branches: excersice all parts of a conditional
+                  branches: exercise all parts of a conditional
                   loops: loop not entered/body of loops executed only once/body of loops executed more than once
                   while: same as loops, cases that are catch always exit loop
             
@@ -504,7 +504,7 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
             
             [ATTENTION]
             path-complete test set could miss a bug, for example in this example, -1 returns -1,
-            so, it is very important that in path-complete test, we examine the boundries.
+            so, it is very important that in path-complete test, we examine the boundaries.
 
             [ATTENTION]
             A very important point in debugging is to be --systematic--
@@ -515,7 +515,7 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
       b. print statement (a good use case of print statement is using bisection method for using print)
 
 
-28. Do and Don't and testing and debuging:
+28. Do and Don't and testing and debugging:
 
       Don't                                                       Do
       write entire program                                  write a function
@@ -623,13 +623,13 @@ If you don't specify the return type, python will make it for you, it is NoneTyp
       c = Coordinate(4, 3)
       zero = Coordinate(0, 0)
 
-      dis = c.distance(zero)        // this equivalant to Coordinate.distance(c, zero)
+      dis = c.distance(zero)        // this equivalent to Coordinate.distance(c, zero)
 
 34. when you print(c), you will get a message like this:
 
       <__main__.Coordinate object at 0x7fa918510488>
 
-      you can change the print value of c, by definin __str__ function that returns string in your class:
+      you can change the print value of c, by defining __str__ function that returns string in your class:
       
       print(c)          # will return <3,4>
 
@@ -675,12 +675,12 @@ but if you import the module to another python file, the __name__ variable in im
 
       you can access class variables with class name
 
-      class Rabit(Animal):
+      class Rabbit(Animal):
             tag = 1
             def __init__(self, name):
                   self.name = name
-                  self.Rid = Rabit.tag
-                  Rabit.tag += 1
+                  self.Rid = Rabbit.tag
+                  Rabbit.tag += 1
       
 
 38. In other lectures we will talk about efficiency:
@@ -693,7 +693,6 @@ but if you import the module to another python file, the __name__ variable in im
             b. how can we relate choices in algorithm design to the time efficiency of the resulting algorithm
 
             c. are there any fundamental limits on the amount of time that we need to solve a problem.
-
       
 39. There are some ways that we can measure algorithm efficiency:
 
@@ -710,11 +709,11 @@ but if you import the module to another python file, the __name__ variable in im
 
             this approach:
                   a. times vary between different algorithm (this ok)
-                  b. running time varys between impelementation, for example for loop vary with while loop (this is not ok)
-                  c. running time varys between computers (this is not ok)
+                  b. running time varies between implementation, for example for loop vary with while loop (this is not ok)
+                  c. running time varies between computers (this is not ok)
                   d. running time is not predictable on small inputs
 
-            2. we can count the opertation, like counting mathematical operations, retrieving data, settign variables, ...
+            2. we can count the operation, like counting mathematical operations, retrieving data, setting variables, ...
 
                   assume these operations take --constant time-- :
 
@@ -724,7 +723,7 @@ but if you import the module to another python file, the __name__ variable in im
                         d. accessing objects in memory
                   
                   -it is depends on algorithm (this is ok)
-                  -running time varys between impelementation, for example for loop vary with while loop (this is not ok)
+                  -running time varies between implementation, for example for loop vary with while loop (this is not ok)
                   -running time does not vary between computers (this is ok)
 
             3. abstract the second approach to the order of the growth:
@@ -742,12 +741,12 @@ but if you import the module to another python file, the __name__ variable in im
                   we focus on the --worst case scenario-- because it gives the --upper bound to the amount of the time-- that is needed for
                         the program
                   
-                  and in the --worst case-- we look for the larget factor in the run time (which piece of the code, take more time)
+                  and in the --worst case-- we look for the largest factor in the run time (which piece of the code, take more time)
                   and by counting the worst case and counting on the largest factor, we gets the upper bound for the program run time
 
                   (we call the big o notation)
 
-40. to analyze the order of growth of the code, we have analyze each chunk of code separetely:
+40. to analyze the order of growth of the code, we have analyze each chunk of code separately:
 
       a. law of --addition--: 
             law of addition used with sequential statements
@@ -778,10 +777,10 @@ but if you import the module to another python file, the __name__ variable in im
 41. Complexity classes:
 
       O(1): denotes constant runtime
-      O(logn): denotes logarthmic runtime (produce problem in half each time)
+      O(logn): denotes logarithmic runtime (produce problem in half each time)
       O(n): denotes linear runtime (simple iterative or recursive)
       O(n logn): denotes log-linear runtime 
-      O(n ^ c): denotes polynomial runtimes (nested loops or recursive calls)
+      O(n ^ c): denotes polynomial runtime (nested loops or recursive calls)
       O(c ^ n): denotes exponential runtime (multiple recursive calls at each level)
 
 41. example of complexity calculation:
@@ -800,8 +799,8 @@ but if you import the module to another python file, the __name__ variable in im
 
       [VERY IMPORTANT]
       If you have list of integer, all the spaces are the same amount, and you can get to the any element in constant time, but what if
-      you have list that are hetrogenous, but python in the list, doesn't store the actual value, it stores the pointer to the memory
-      that stores that actual value, so even in hetrogenous list, we can retrieve data in constant time.
+      you have list that are heterogenous, but python in the list, doesn't store the actual value, it stores the pointer to the memory
+      that stores that actual value, so even in heterogenous list, we can retrieve data in constant time.
 
 
       b. linear search on sorted list:
@@ -837,7 +836,7 @@ but if you import the module to another python file, the __name__ variable in im
 
 
             [ATTENTION]
-            it is possible to avoid copying the list and make the bisection search logarthmic.
+            it is possible to avoid copying the list and make the bisection search logarithmic.
 
             def bisection_search(L, e):
                   def bisection_search_helper(L, e, low, high):
@@ -869,7 +868,7 @@ but if you import the module to another python file, the __name__ variable in im
                         i = i // 10
                   return res
             
-            # all the operations are constant time, and the loop is logarthmic, so the complexity of this algorithm is O(logn)
+            # all the operations are constant time, and the loop is logarithmic, so the complexity of this algorithm is O(logn)
       
       e. factorial function in direct way and recursive way
 
@@ -940,7 +939,7 @@ but if you import the module to another python file, the __name__ variable in im
                   extra = L[-1:]  # this is constant        
                   new = []          # this is constant
                   for small in smaller:               # time of the problem is to solve smaller problem + time to make a copy of smaller
-                                                                                                            solution (this is exponentialy)
+                                                                                                            solution (this is exponentially)
                                                                                                             2^k
                         new.append(small+extra) # this is constant
                   
@@ -972,122 +971,127 @@ but if you import the module to another python file, the __name__ variable in im
                               tmp = fib_i
                               fib_i = fib_ii
                               fib_ii = temp + fib_i
-                        returb fib_ii
+                        return fib_ii
 
 42. Searching and sorting:
 
-      linear search:
-            the complexity of this is O(n)
-      
-      bisection search:
-            the list must be sorted, to give the correct answer.
-            There are two different implementation of this algorithm, one of them is O(logn)
+      --Searching--: 
 
-      
-            [ATTENTION]
-            you can not sort the list, with less than O(n), because at least, you have to see each element of the list once.
-            but sometimes, if you want to operate multiple search in a list, you can sort it once, and then use bisection search multiple
-            times, so in this way it is more effficient to use bisection search on a unsorted list that linear search
-      
-      a. bubble sort:
-            in this sort, you go through the list, and takes the bigger element to the end of list in turn:
-
-            def bubble_sort(L):
-                  swap = false
-                  while not swap:
-                        swap = true
-                        for j in range(n-1):
-                              if L[j-1] > L[j]:
-                                    swap = false
-                                    tmp = L[j-1]
-                                    L[j-1] = L[j]
-                                    L[j] = tmp
+            --linear search--:
+                  the complexity of this is O(n)
             
-            The complexity of this algorithm is O(n^2)
+            --bisection (binary) search--:
+                  the list must be sorted, to give the correct answer.
+                  There are two different implementation of this algorithm, one of them is O(logn)
+
+            
+                  [ATTENTION]
+                  you can not sort the list, with less than O(n), because at least, you have to see each element of the list once.
+                  but sometimes, if you want to operate multiple search in a list, you can sort it once, and then use bisection search multiple
+                  times, so in this way it is more efficient to use bisection search on a unsorted list that linear search
       
-      b. Selection sort:
+      --Sorting--: 
+      
+            --bubble sort--:
+                  in this sort, you go through the list, and takes the bigger element to the end of list in turn:
 
-            first step: 
-                  swap elements with index 0 to find the min
-            
-            subsequent step:
-                  in remaining sublist, extract the minimum
-                  swap it with the element at position 1
-            
-            Proof that selection sort will sort the list:
+                  def bubble_sort(L):
+                        no_swap = false
+                        while not no_swap:
+                              no_swap = true
 
-            loop invariant: given prefix of L[0:i] and suffix L[i+1: len(L)] then prefix is sorted and no element in the prefix
-            is larger that smallest element in the prefix
-
-            proof by induction:
-
-                  base case: the prefix is empty so the base case is true.
+                              for j in range(n-1):
+                                    if L[j-1] > L[j]:
+                                          no_swap = false
+                                          tmp = L[j-1]
+                                          L[j-1] = L[j]
+                                          L[j] = tmp
                   
-                  inductive step: P(n): prefix L[0:n] is sorted and no element in the prefix is larger than the smallest element
-                  in the suffix
-
-                  P(n+1): move minimum element in the suffix and append it to the prefix, since P(n) is true, so the prefix is 
-                        still sorted, and because we append the minimum element of the suffix, no element in the prefix is larger
-                        than the smallest element in the suffix.
+                  The complexity of this algorithm is O(n^2)
             
-            def selection_sort(L):
-                  suffixSt = 0
-                  while suffixSt != len(L):
-                        for j in range(suffixSt, len(L)):
-                              if L[j] < L[suffixSt]:
-                                    L[suffixSt], L[j] = L[j], L[suffixSt]
+            --Selection sort--:
+
+                  first step: 
+                        swap elements with index 0 to find the min
+                  
+                  subsequent step:
+                        in remaining sub list, extract the minimum
+                        swap it with the element at position 1
+                  
+                  Proof that selection sort will sort the list:
+
+                  loop invariant: given prefix of L[0:i] and suffix L[i+1: len(L)] then prefix is sorted and no element in the prefix
+                  is larger that smallest element in the prefix
+
+                  proof by induction:
+
+                        base case: the prefix is empty so the base case is true.
                         
-                        suffixSt += 1
+                        inductive step: P(n): prefix L[0:n] is sorted and no element in the prefix is larger than the smallest element
+                        in the suffix
+
+                        P(n+1): move minimum element in the suffix and append it to the prefix, since P(n) is true, so the prefix is 
+                              still sorted, and because we append the minimum element of the suffix, no element in the prefix is larger
+                              than the smallest element in the suffix.
+                  
+                  def selection_sort(L):
+                        suffixSt = 0
+                        while suffixSt != len(L):
+                              for j in range(suffixSt, len(L)):
+                                    if L[j] < L[suffixSt]:
+                                          L[suffixSt], L[j] = L[j], L[suffixSt]
+                              
+                              suffixSt += 1
+                  
+                  the complexity is quadratic
             
-            the complexity is quadratic
-      
-      c. merge sort:
+            --merge sort--:
 
-            this is based on divide and conquer solution: divide the list until you have list with 1 element, and merge
-            two list to have sorted lists with two elements and so on ...
+                  this is based on divide and conquer solution: divide the list until you have list with 1 element, and merge
+                  two list to have sorted lists with two elements and so on ...
 
-            def merge(left, right):
-                  i, j = 0, 0
-                  result = []
-                  while i < len(left) and j < len(right):         
-                        if left[i] < right[j]:
+                  def merge(left, right):
+                        i, j = 0, 0
+                        result = []
+                        while i < len(left) and j < len(right):         
+                              if left[i] < right[j]:
+                                    result.append(left[i])
+                                    i += 1
+                              else: 
+                                    result.append(right[j])
+                                    j += 1
+                        while i < len(left):
                               result.append(left[i])
                               i += 1
-                        else: 
+                        while j < len(right)
                               result.append(right[j])
                               j += 1
-                  while i < len(left):
-                        result.append(left[i])
-                        i += 1
-                  while j < len(right)
-                        result.append(right[j])
-                        j += 1
+                  
+                  O(len(left) + len(right)) copied elements
+                  O(len(longer list)) comparison
+
+
+                  def merge_sort(L):
+                        if len(L) < 2:
+                              return L[:]
+                        else:
+                              middle = len(L) // 2
+                              left = merge_sort(L[:middle])
+                              right = merge_sort(L[middle:])
+                              return merge(left, right)
+
+                  [ATTENTION]
+                  There are logn level in merge sort (each time we divide problem into half) and in each step, we use n copying of elements
+                  so the complexity is O(nlogn)
+                        n
+                  
+                  n/2         n/2
             
-            O(len(left) + len(right)) copied elements
-            O(len(longer list)) comparison
-
-
-            def merge_sort(L):
-                  if len(L) < 2:
-                        return L[:]
-                  else:
-                        middle = len(L) // 2
-                        left = merge_sort(L[:middle])
-                        right = merge_sort(L[middle:])
-                        return merge(left, right)
-
-            [ATTENTION]
-            There are logn level in merge sort (each time we divide problem into half) and in each step, we use n copying of elements
-            so the complexity is O(nlogn)
-                    n
-            
-            n/2         n/2
-      
-      n/4       n/4  n/4     n/4
-                  .
-                  .
-                  .
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+            n/4       n/4  n/4     n/4
+                        .
+                        .
+                        .
+      1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 
 43. Last but not least:
 
@@ -1105,7 +1109,7 @@ but if you import the module to another python file, the __name__ variable in im
       
       b. you can choose your python interpreter bellow the vs code.
 
-      c. you can findout which python or pip you are running by using:
+      c. you can find out which python or pip you are running by using:
 
             which python      or which pip
 
@@ -1126,7 +1130,7 @@ but if you import the module to another python file, the __name__ variable in im
 
       a. you can use get function with a dictionary to get a value for a certain key in dictionary.
 
-            sampleDic.get(key, defaultValue)          if you don't specify the default value, it will retrun None
+            sampleDic.get(key, defaultValue)          if you don't specify the default value, it will return None
 
 
 --------------- Very important concept in python and in OS -----------
@@ -1151,4 +1155,4 @@ but if you import the module to another python file, the __name__ variable in im
 
       then you can use one of the packages to see the location where pip install its packages:
       
-      >> pip show <packagename>
+      >> pip show <package name>
